@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="caravanas_action" name="caravans"
+                     res_model="caravanas" />
+
+
+        <record id="caravanas_view_tree" model="ir.ui.view">
+            <field name="name">Lista datos</field>
+            <field name="model">caravanas</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="codigo" />
+                    <field name="modelo" />
+					<field name="marca" />
+                    <field name="matricula" />
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record id="caravanas_view_search" model="ir.ui.view">
+            <field name="name">Busqueda datos</field>
+            <field name="model">caravanas</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="codigo" />
+                    <field name="modelo" />
+					<field name="marca" />
+                    <field name="matricula" />
+                </search>
+            </field>
+        </record>
+        <menuitem name="Caravanas" id="menu_caravana" parent="menu_concesionario" sequence="10"/>
+        <menuitem name="caravana" id="menu_caravanas" action="caravanas_action" parent="menu_caravana" sequence="10"/>
+
+    </data>
+</odoo>

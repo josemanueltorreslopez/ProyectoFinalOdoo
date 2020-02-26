@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="promociones_action" name="promotions"
+                     res_model="promociones" />
+
+
+        <record id="promociones_view_tree" model="ir.ui.view">
+            <field name="name">Lista promociones</field>
+            <field name="model">promociones</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="codigo" />
+                    <field name="nombre" />
+					<field name="descripcion" />
+                    <field name="fechInicio" />
+					<field name="fechFinal" />
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record id="promociones_view_search" model="ir.ui.view">
+            <field name="name">Busqueda promociones</field>
+            <field name="model">promociones</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="codigo" />
+                    <field name="nombre" />
+					<field name="descripcion" />
+                    <field name="fechInicio" />
+					<field name="fechFinal" />
+                </search>
+            </field>
+        </record>
+        <menuitem name="Promociones" id="menu_promociones" parent="menu_concesionario" sequence="10"/>
+        <menuitem name="promocion" id="menu_promocion" action="promociones_action" parent="menu_promociones" sequence="10"/>
+
+    </data>
+</odoo>

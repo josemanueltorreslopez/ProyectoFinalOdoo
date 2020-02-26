@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="personal_action" name="personal"
+                     res_model="personal" />
+
+
+        <record id="promociones_view_tree" model="ir.ui.view">
+            <field name="name">Lista personal</field>
+            <field name="model">personal</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="codigo" />
+                    <field name="nombre" />
+					<field name="puesto" />
+                    <field name="fechContrato" />
+					<field name="sueldo" />
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record id="promociones_view_search" model="ir.ui.view">
+            <field name="name">Busqueda personal</field>
+            <field name="model">personal</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="codigo" />
+                    <field name="nombre" />
+					<field name="puesto" />
+                    <field name="fechContrato" />
+					<field name="sueldo" />
+                </search>
+            </field>
+        </record>
+        <menuitem name="Personal" id="menu_personal" parent="menu_concesionario" sequence="10"/>
+        <menuitem name="personal" id="menu_person" action="personal_action" parent="menu_personal" sequence="10"/>
+
+    </data>
+</odoo>

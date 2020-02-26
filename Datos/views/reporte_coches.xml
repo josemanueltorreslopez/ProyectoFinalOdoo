@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+    <report id="report_coches"
+        string = "Reporte de los Coches"
+        model = "coches"
+        report_type = "qweb-pdf"
+        name = "Datos.report_coches_template"
+    />
+        <template id = "report_coches_template">
+            <t t-call = "web.html_container">
+                 <t t-call = "web.external_layout">
+                    <t t-foreach="docs" t-as="doc">
+                        <h2>Coches</h2>
+                        Codigo: <t t-esc="doc.codigo"/>
+                        Modelo: <t t-esc="doc.modelo"/>
+                        Marca: <t t-esc="doc.marca"/>
+                        Matricula: <t t-esc="doc.matricula"/>
+                    </t>
+                 </t>
+            </t>
+        </template>
+    </data>
+</openerp>
